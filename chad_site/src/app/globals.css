@@ -17,6 +17,61 @@
   transition: 0.7s;
 }
 
+.btn_2 {
+  width: 340px;
+  height: 70px;
+  border: 2px solid #ffffff;
+  font-size: 50px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+  transition: 0.7s;
+}
+
+.btn_2::before, .btn_2::after {
+  position: absolute;
+  background: #000000;
+  z-index: -1;
+  transition: 0.7s;
+  content: '';
+}
+
+.btn_2::before {
+  height: 70px; /* Keep inline with Height of box; */
+  width: 240px; /* changes gap size; */
+  
+  
+}
+
+.btn_2::after {
+  width: 340px; /* Keep inline with width of box; */
+  height: 25px; /* changes gap size; */
+  
+  
+  
+}
+
+.btn_2:hover::before {
+  width: 0px;
+  background: #ffffff;
+  color: black
+}
+
+.btn_2:hover::after {
+  height: 0px;
+  background: #ffffff;
+  color: black
+}
+
+.btn_2:hover {
+  background: #ffffff;
+  color: black
+}
+
 .btn::before, .btn::after {
   position: absolute;
   background: #000000;
@@ -24,6 +79,8 @@
   transition: 0.7s;
   content: '';
 }
+
+
 
 .btn::before {
   height: 50px;
