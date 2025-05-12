@@ -3,7 +3,7 @@ import Contact from "./contact";
 
 export default function Home() {
   return (
-    <div>
+    <div className="flex w-screen h-screen flex-col  ">
       {/* Header Section */}
       <div className="h-16 flex items-center px-4">
         <Header />
