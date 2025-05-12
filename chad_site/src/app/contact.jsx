@@ -2,9 +2,15 @@
 
 import React, { useState } from 'react';
 import TextEffect from './textEffect.jsx';
+import {  FaGithub, FaLinkedin  , FaEnvelope, FaPaperclip  } from 'react-icons/fa'; // Import icons from react-icons
 
 function Contact() {
-  const menuItems = ['LINKEDIN', 'EMAIL', 'GITHUB', 'RESUME'];
+  const menuItems = [
+    { text: 'GITHUB', icon: <FaGithub /> },
+    { text: 'EMAIL', icon: <FaEnvelope /> },
+    { text: 'LINKEDIN', icon: <FaLinkedin   /> },
+    { text: 'RESUME', icon: <FaPaperclip  /> },
+  ];
   const [triggers, setTriggers] = useState({});
 
   const handleMouseEnter = (index) => {
@@ -18,16 +24,21 @@ function Contact() {
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="flex flex-col items-center gap-4">
-        {/* Loop through the menu items and create buttons */}
         {menuItems.map((item, index) => (
-          <div
-            key={item}
+          <a
+            key={item.text}
+            href={`#${item.text.toLowerCase()}`} // Change the href to the link you want
+            target="_self" // Adjust as needed (e.g., _blank for new tab)
             className="btn"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
           >
-            <TextEffect text={item} trigger={triggers[index]} />
-          </div>
+            <div className="flex items-center gap-2">
+              {/* Render the icon and text */}
+              <span>{item.icon}</span>
+              <TextEffect text={item.text} trigger={triggers[index]} />
+            </div>
+          </a>
         ))}
       </div>
     </div>

@@ -10,7 +10,7 @@ export default function Home() {
       </div>
 
       {/* Main Content Section */}
-      <div className="h-[calc(100vh-4rem)] border">
+      <div className="h-[calc(100vh-4rem)]  overflow-y-auto ">
         <Contact />
       </div>
     </div>
