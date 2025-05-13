@@ -6,7 +6,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { AsciiEffect } from 'three/examples/jsm/effects/AsciiEffect.js';
 import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls.js';
 
-function AsciiBackground({ modelPath, modelSize, modelPositionX, modelPositionY }) {
+function AsciiBackground({ modelPath, modelSize, modelPositionX, modelPositionY, modelPositionZ, rotationSpeed }) {
   const mountRef = useRef(null);
   const modelRef = useRef(null); // Use this to keep a reference to the model
 
@@ -42,7 +42,7 @@ function AsciiBackground({ modelPath, modelSize, modelPositionX, modelPositionY 
         console.log('Model loaded:', gltf);
         const model = gltf.scene;
         model.scale.set(modelSize, modelSize, modelSize); // Use the prop for scaling the model
-        model.position.set(modelPositionX, modelPositionY, 0); // Set the model's position based on the props
+        model.position.set(modelPositionX, modelPositionY, modelPositionZ); // Set the model's position based on the props
         scene.add(model);
         modelRef.current = model; // Store the model in the ref
       },
@@ -64,7 +64,7 @@ function AsciiBackground({ modelPath, modelSize, modelPositionX, modelPositionY 
 
       // Rotate the model every frame (if the model is loaded)
       if (modelRef.current) {
-        modelRef.current.rotation.y += 0.01; // Adjust rotation speed as needed
+        modelRef.current.rotation.y += (rotationSpeed*0.01); // Adjust rotation speed as needed
       }
 
       effect.render(scene, camera);
@@ -76,7 +76,7 @@ function AsciiBackground({ modelPath, modelSize, modelPositionX, modelPositionY 
     return () => {
       mount.removeChild(effect.domElement);
     };
-  }, [modelPath, modelSize, modelPositionX, modelPositionY]); // Re-run the effect if any of these props change
+  }, [modelPath, modelSize, modelPositionX, modelPositionY, modelPositionZ]); // Re-run the effect if any of these props change
 
   return <div ref={mountRef} style={{ width: '100vw', height: '100vh', pointerEvents: 'none' }} />;
 }

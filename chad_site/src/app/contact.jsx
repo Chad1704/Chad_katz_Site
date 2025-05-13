@@ -26,7 +26,7 @@ function Contact() {
     <div className="relative h-full w-full "> 
       {/* Pass the model path and size as props */}
       <div className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none">
-        <AsciiBackground modelPath="/Models/frog.glb" modelSize={2} modelPositionX={-1} modelPositionY={-8}/> {/* Adjust size here */}
+        <AsciiBackground modelPath="/Models/frog.glb" modelSize={1.5} modelPositionX={-1} modelPositionY={-6} modelPositionZ={-3} rotationSpeed={-1000.5}/> {/* Adjust size here */}
       </div>
 
       <div className="flex h-full">
