@@ -25,7 +25,7 @@ function Contact() {
     <div className="flex h-full  ">
 
       <div className='flex  border- 0 w-screen '>
-        <h1 className='text-8xl  text-left  mt-10 ml-10'>Get In <br /> <div className=' text-amber-300 p2' >Touch</div> </h1>
+        <h1 className='text-8xl  text-left  mt-10 ml-10 '>Get In <br /> <div className=' text-amber-300 by7' >Touch</div> </h1>
       </div>
 
       <div className="flex  flex-col   items-center justify-center h-fit bg-gradient-to-b ">
@@ -48,7 +48,7 @@ function Contact() {
   </span>
 
   {/* This fills the entire container */}
-  <div className="w-full h-full     justify-end pr-5 flex items-center">
+  <div className="w-full h-full    by7b justify-end pr-5 flex items-center">
     <TextEffect className="" text={item.text} trigger={triggers[index]} />
   </div>
 </div>

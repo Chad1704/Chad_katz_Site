@@ -24,7 +24,7 @@ function Header() {
         </div>
 
         {/* Centered buttons */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center gap-2 text-xl font-mono">
+        <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center gap-2 text-xl by7">
           {menuItems.map((item, index) => (
             <React.Fragment key={item}>
               <div

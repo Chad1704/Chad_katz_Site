@@ -8,10 +8,37 @@
 }
 
 @font-face {
+  font-family: 'by7b';
+  src: url('/fonts/by7_b.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'by7';
+  src: url('/fonts/by7.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'p2';
   src: url('/fonts/PressStart2P-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+
+.dot {
+  font-family: 'dot', sans-serif;
+}
+
+.by7 {
+  font-family: 'by7', sans-serif;
+}
+
+.by7b {
+  font-family: 'by7b', sans-serif;
 }
 
 
