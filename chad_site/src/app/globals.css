@@ -70,6 +70,7 @@
   width: 340px;
   height: 70px;
   border: 2px solid #ffffff;
+  background: #000000;
   font-size: 50px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -94,6 +95,7 @@
   width: 240px; /* changes gap size; */
   
   
+  
 }
 
 .btn_2::after {
@@ -102,11 +104,13 @@
   
   
   
+  
 }
 
 .btn_2:hover::before {
   width: 0px;
   background: #ffffff;
+  
   color: black
 }
 
