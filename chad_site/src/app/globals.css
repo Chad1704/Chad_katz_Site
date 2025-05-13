@@ -1,5 +1,27 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'dot';
+  src: url('/fonts/DOTFONTS.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'p2';
+  src: url('/fonts/PressStart2P-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.dot {
+  font-family: 'dot', sans-serif;
+}
+
+.p2 {
+  font-family: 'p2', sans-serif;
+}
 
 
 .btn {

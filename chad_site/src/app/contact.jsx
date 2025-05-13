@@ -24,14 +24,14 @@ function Contact() {
   return (
     <div className="flex h-full  ">
 
-      <div className='flex  border-2 0 w-screen bg-amber-200'>
-        <h1 className='text-8xl font-mono text-left  mt-10 ml-10'>Get In Touch</h1>
+      <div className='flex  border- 0 w-screen '>
+        <h1 className='text-8xl  text-left  mt-10 ml-10'>Get In <br /> <div className=' text-amber-300 p2' >Touch</div> </h1>
       </div>
 
-      <div className="flex  flex-col   items-center justify-center h-fit w-full bg-gradient-to-b from-amber-600 to-amber-400">
+      <div className="flex  flex-col   items-center justify-center h-fit bg-gradient-to-b ">
 
       </div>
-      <div className="flex flex-col  items-center  mt-22 bg-amber-400  h-fit gap-4 font-mono mr-40  ">
+      <div className="flex flex-col  items-center  mt-22   h-fit gap-4 font-mono mr-40  ">
         {menuItems.map((item, index) => (
           <a
             key={item.text}
