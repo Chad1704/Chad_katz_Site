@@ -22,16 +22,16 @@ function Contact() {
   };
 
   return (
-    <div className="flex h-full  bg-green-500 ">
+    <div className="flex h-full  ">
 
-      <div className='flex bg-amber-950'>
-        TEST
+      <div className='flex  border-2 0 w-screen bg-amber-200'>
+        <h1 className='text-8xl font-mono text-left  mt-10 ml-10'>Get In Touch</h1>
       </div>
 
-      <div className="flex flex-col items-center justify-center h-fit w-full bg-gradient-to-b from-amber-600 to-amber-400">
+      <div className="flex  flex-col   items-center justify-center h-fit w-full bg-gradient-to-b from-amber-600 to-amber-400">
 
       </div>
-      <div className="flex flex-col items-center h-fit border border-amber-600  gap-4 font-mono  ">
+      <div className="flex flex-col  items-center  mt-22 bg-amber-400  h-fit gap-4 font-mono mr-40  ">
         {menuItems.map((item, index) => (
           <a
             key={item.text}
@@ -41,7 +41,7 @@ function Contact() {
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
           >
-            <div className="relative  flex w-full h-full items-center ">
+            <div className="relative  flex w-full h-full items-center  ">
   {/* Absolutely position the icon over the center */}
   <span className="absolute z-9 pl-3.5 ">
     {item.icon}

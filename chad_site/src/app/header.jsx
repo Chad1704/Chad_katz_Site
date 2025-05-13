@@ -16,7 +16,7 @@ function Header() {
   };
 
   return (
-    <div className="w-full h-20 bg-green-200 ">
+    <div className=" w-full h-20   ">
       <div className="relative flex items-center justify-between h-full ">
         {/* Left-aligned frog */}
         <div className="w-16 h-full flex items-center">
