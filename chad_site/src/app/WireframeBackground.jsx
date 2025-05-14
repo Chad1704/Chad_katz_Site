@@ -3,9 +3,9 @@
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { AsciiEffect } from 'three/examples/jsm/effects/AsciiEffect.js';
+import { mergeVertices } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 
-function AsciiBackground({
+function WireframeBackground({
   modelPath,
   modelSize,
   modelPositionX,
@@ -14,6 +14,9 @@ function AsciiBackground({
   friction = 0.9,
   baseVelocity = { x: 0.01, y: 0.01 },
   forceFactor = 0.002,
+  modelColor = '#ffffff',
+  wireframeColor = '#000000',
+  wireframeWidth = 1.0,
 }) {
   const mountRef = useRef(null);
   const modelRef = useRef(null);
@@ -22,42 +25,16 @@ function AsciiBackground({
 
   useEffect(() => {
     const mount = mountRef.current;
-
-    const scene = new THREE.Scene();
     const width = mount.clientWidth;
     const height = mount.clientHeight;
 
+    const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     camera.position.z = 5;
 
-    const renderer = new THREE.WebGLRenderer();
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(width, height);
-
-    const effect = new AsciiEffect(renderer, ' .,:;i1tfLCG08@', { invert: true });
-    effect.setSize(width, height);
-    effect.domElement.style.color = 'grey';
-    effect.domElement.style.backgroundColor = '#36f38d';
-    effect.domElement.style.width = '100%';
-    effect.domElement.style.height = '100%';
-    effect.domElement.style.display = 'block';
-
-    mount.appendChild(effect.domElement);
-
-    const loader = new GLTFLoader();
-    loader.load(
-      modelPath,
-      (gltf) => {
-        const model = gltf.scene;
-        model.scale.set(modelSize, modelSize, modelSize);
-        model.position.set(modelPositionX, modelPositionY, modelPositionZ);
-        scene.add(model);
-        modelRef.current = model;
-      },
-      undefined,
-      (error) => {
-        console.error('Model load error:', error);
-      }
-    );
+    mount.appendChild(renderer.domElement);
 
     const light = new THREE.DirectionalLight(0xffffff, 1);
     light.position.set(5, 5, 5);
@@ -71,7 +48,36 @@ function AsciiBackground({
 
     window.addEventListener('mousemove', handleMouseMove);
 
-    function animate() {
+    const loader = new GLTFLoader();
+    loader.load(
+      modelPath,
+      (gltf) => {
+        const model = gltf.scene;
+        model.scale.set(modelSize, modelSize, modelSize);
+        model.position.set(modelPositionX, modelPositionY, modelPositionZ);
+
+        model.traverse((child) => {
+          if (child.isMesh) {
+            const geometry = child.geometry;
+            const material = new THREE.MeshBasicMaterial({
+              color: modelColor,
+              wireframe: true,
+              wireframeLinewidth: wireframeWidth,
+            });
+            child.material = material;
+          }
+        });
+
+        scene.add(model);
+        modelRef.current = model;
+      },
+      undefined,
+      (error) => {
+        console.error('Model load error:', error);
+      }
+    );
+
+    const animate = () => {
       requestAnimationFrame(animate);
 
       const model = modelRef.current;
@@ -95,13 +101,13 @@ function AsciiBackground({
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
 
-      effect.render(scene, camera);
-    }
+      renderer.render(scene, camera);
+    };
 
     animate();
 
     return () => {
-      mount.removeChild(effect.domElement);
+      mount.removeChild(renderer.domElement);
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, [
@@ -114,23 +120,25 @@ function AsciiBackground({
     baseVelocity.x,
     baseVelocity.y,
     forceFactor,
+    modelColor,
+    wireframeColor,
+    wireframeWidth,
   ]);
 
   return (
     <div
-  ref={mountRef}
-  style={{
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    pointerEvents: 'none',
-    zIndex: 10,
-  }}
-/>
-
+      ref={mountRef}
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        pointerEvents: 'none',
+        zIndex: -10,
+      }}
+    />
   );
 }
 
-export default AsciiBackground;
+export default WireframeBackground;

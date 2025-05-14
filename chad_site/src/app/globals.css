@@ -1,69 +1,63 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'dot';
-  src: url('/fonts/DOTFONTS.TTF') format('truetype');
+  font-family: "dot";
+  src: url("/fonts/DOTFONTS.TTF") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'by7b';
-  src: url('/fonts/by7_b.ttf') format('truetype');
+  font-family: "by7b";
+  src: url("/fonts/by7_b.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'by7';
-  src: url('/fonts/by7.ttf') format('truetype');
+  font-family: "by7";
+  src: url("/fonts/by7.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'p2';
-  src: url('/fonts/PressStart2P-Regular.ttf') format('truetype');
+  font-family: "p2";
+  src: url("/fonts/PressStart2P-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
-
-
-
-
-
-
 
 /* ASCII Drift text container */
 .animate-ascii-drift {
   font-family: monospace;
- 
 }
 
-
+.linkbar {
+  rotate: 90deg;
+}
 
 .dot {
-  font-family: 'dot', sans-serif;
+  font-family: "dot", sans-serif;
 }
 
 .by7 {
-  font-family: 'by7', sans-serif;
+  font-family: "by7", sans-serif;
 }
 
 .by7b {
-  font-family: 'by7b', sans-serif;
+  font-family: "by7b", sans-serif;
 }
 
-
 .dot {
-  font-family: 'dot', sans-serif;
+  font-family: "dot", sans-serif;
 }
 
 .p2 {
-  font-family: 'p2', sans-serif;
+  font-family: "p2", sans-serif;
 }
 
-.header{
+.header {
   color: #ffffff;
   opacity: 0.8;
 }
@@ -75,7 +69,6 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
- 
   }
 
   .contact-buttons {
@@ -83,13 +76,8 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
-
-    
   }
 }
-
-
 
 .btn {
   width: 150px;
@@ -126,58 +114,51 @@
   transition: 0.7s;
 }
 
-.btn_2::before, .btn_2::after {
+.btn_2::before,
+.btn_2::after {
   position: absolute;
   background: #000000;
   z-index: -1;
   transition: 0.7s;
-  content: '';
+  content: "";
 }
 
 .btn_2::before {
   height: 70px; /* Keep inline with Height of box; */
   width: 240px; /* changes gap size; */
-  
-  
-  
 }
 
 .btn_2::after {
   width: 340px; /* Keep inline with width of box; */
   height: 25px; /* changes gap size; */
-  
-  
-  
-  
 }
 
 .btn_2:hover::before {
   width: 0px;
   background: #ffffff;
-  
-  color: black
+
+  color: black;
 }
 
 .btn_2:hover::after {
   height: 0px;
   background: #ffffff;
-  color: black
+  color: black;
 }
 
 .btn_2:hover {
   background: #ffffff;
-  color: black
+  color: black;
 }
 
-.btn::before, .btn::after {
+.btn::before,
+.btn::after {
   position: absolute;
   background: #000000;
   z-index: -1;
   transition: 0.7s;
-  content: '';
+  content: "";
 }
-
-
 
 .btn::before {
   height: 50px;
@@ -191,30 +172,29 @@
 
 .noselect {
   -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .btn:hover::before {
   width: 0px;
   background: #ffd230;
-  color: black
+  color: black;
 }
 
 .btn:hover::after {
   height: 0px;
   background: #ffd230;
-  color: black
+  color: black;
 }
 
 .btn:hover {
   background: #ffd230;
-  color: black
+  color: black;
 }
-
 
 :root {
   --background: #ffffff;
@@ -253,4 +233,41 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.hero-border {
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+  border-right: 0.5px solid rgba(225, 225, 225, 0.1);
+}
 
+@media (min-width: 1024px) {
+  .hero-border {
+    border-bottom: 0.5px solid rgba(225, 225, 225, 0.1);
+  }
+}
+
+.about-border {
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+@media (min-width: 1024px) {
+  .about-border {
+    border-bottom: 0.5px solid rgba(225, 225, 225, 0.1);
+  }
+}
+
+.pro-border {
+  border-bottom: none;
+  border-top: 0.5px solid rgba(225, 225, 225, 0.1);
+  border-left: none;
+  border-right: 0.5px solid rgba(225, 225, 225, 0.1);
+}
+
+@media (min-width: 1024px) {
+  .pro-border {
+    border-top: none;
+  }
+}

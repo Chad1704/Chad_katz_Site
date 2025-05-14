@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 export default function TextEffect({ text, trigger }) {
   const wordRef = useRef(null);
-  const scrambleChars = ['.', ':', '-', '+', '*', '=', '%', '@', '#'];
+  const scrambleChars = [".", ":", "-", "+", "*", "=", "%", "@", "#"];
   const delayBetweenLetters = 40;
   const frameDelay = 25;
   const originalText = text;
@@ -47,18 +47,20 @@ export default function TextEffect({ text, trigger }) {
   };
 
   useEffect(() => {
-    const letters = wordRef.current.querySelectorAll('.letter');
-    if (trigger === 'enter') {
+    const letters = wordRef.current.querySelectorAll(".letter");
+    if (trigger === "enter") {
       scrambleText(letters, originalText, true);
-    } else if (trigger === 'leave') {
+    } else if (trigger === "leave") {
       scrambleText(letters, originalText, false);
     }
   }, [trigger]);
 
   return (
     <span ref={wordRef} className="texteffect">
-      {text.split('').map((char, idx) => (
-        <span key={idx} className="letter">{char}</span>
+      {text.split("").map((char, idx) => (
+        <span key={idx} className="letter">
+          {char}
+        </span>
       ))}
     </span>
   );
