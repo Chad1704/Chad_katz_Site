@@ -16,11 +16,11 @@ function Header() {
   };
 
   return (
-    <div className=" w-full h-20   ">
+    <div className=" w-full h-25  mt-10   ">
       <div className="relative flex items-center justify-between h-full ">
         {/* Left-aligned frog */}
-        <div className="w-16 h-full flex items-center">
-          <img src="frog2.png" className="h-15 " alt="frog" />
+        <div className="w-50 h-full flex items-center">
+          <img src="frog2.png" className="h-22 " alt="frog" />
         </div>
 
         {/* Centered buttons */}

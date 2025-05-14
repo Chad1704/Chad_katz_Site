@@ -4,6 +4,8 @@ import TextEffect from './textEffect.jsx';
 import AsciiBackground from './AsciiBackground.jsx'; // Import your new component
 import { FaGithub, FaLinkedin, FaEnvelope, FaPaperclip } from 'react-icons/fa';
 
+
+
 function Contact() {
   const menuItems = [
     { text: 'GITHUB', icon: <FaGithub /> },
@@ -25,19 +27,28 @@ function Contact() {
   return (
     <div className="relative h-full w-full "> 
       {/* Pass the model path and size as props */}
-      <div className="fixed top-0 left-0 w-full h-full -z-10 pointer-events-none">
-        <AsciiBackground modelPath="/Models/frog.glb" modelSize={1.5} modelPositionX={-1} modelPositionY={-6} modelPositionZ={-3} rotationSpeed={-1000.5}/> {/* Adjust size here */}
+      <div className="  fixed top-0 left-0 w-full h-full -z-10 pointer-events-none">
+        <AsciiBackground modelPath="/Models/frog.glb" 
+        modelSize={1} modelPositionX={-1} 
+        modelPositionY={-3} 
+        modelPositionZ={-3} 
+        friction={0.7}
+baseVelocity={{ x: 0.005, y: 0.005 }}
+forceFactor={0.0005}
+
+/> {/* Adjust size here */}
       </div>
 
-      <div className="flex h-full">
-        <div className='flex border-0 w-screen'>
-          <h1 className='text-8xl text-left mt-10 ml-10'>
+      <div className="flex h-full bg">
+        <div className='flex border-0 w-fit '>
+          <h1 className='text-9xl text-left mt-30 ml-20'>
             Get In <br />
             <div className='text-amber-300 by7'>Touch</div>
+            
           </h1>
         </div>
 
-        <div className="flex flex-col items-center mt-22 h-fit gap-4 font-mono mr-40">
+        <div className="flex flex-col  ml-20 mt-30 w-full  h-fit gap-4 font-mono mr-80">
           {menuItems.map((item, index) => (
             <a
               key={item.text}
