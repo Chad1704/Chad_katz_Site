@@ -16,7 +16,7 @@ export default function QuoteBox({ quotePack, transitionTime = 7000 }) {
   }, [quotePack.length, transitionTime]);
 
   return (
-    <div className="flex items-center justify-center text-center text-2xl md:text-3xl font-mono bg-black text-white max-w-4xl px-4 h-fit">
+    <div className="flex items-center justify-center text-center text-2xl md:text-3xl font-mono bg-black  max-w-4xl px-4 h-fit">
   <TextEffect text={quotePack[index]} />
 </div>
 

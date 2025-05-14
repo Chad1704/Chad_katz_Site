@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 function AsciiDrift({ randomOrder, text, keyProp }) {
   const [asciiText, setAsciiText] = useState([]);
-  const [fadeKey, setFadeKey] = useState(0);  // Used to trigger fade effects
-  const [isHovering, setIsHovering] = useState(false); // Track hover state
-  
+
   // Shuffle the text if randomOrder is true
   const shuffleText = (arr) => {
     return arr.sort(() => Math.random() - 0.5);
@@ -28,32 +26,13 @@ function AsciiDrift({ randomOrder, text, keyProp }) {
   };
 
   useEffect(() => {
-    // When keyProp changes (e.g. hover effect), update the text and trigger fade animation
-    setFadeKey((prev) => prev + 1);  // Increment to trigger transition
     setAsciiText(getRepeatedText());
   }, [keyProp]);
 
-  const handleMouseEnter = () => {
-    setIsHovering(true);  // Start fading out when hovering
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovering(false);  // Start fading in when hover ends
-  };
-
   return (
-    <div 
-      className="animate-ascii-drift flex flex-col text-left w-70 opacity-25"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="animate-ascii-drift flex flex-col text-left w-70 opacity-25">
       {asciiText.map((line, i) => (
-        <div
-          key={i}
-          className={`${
-            isHovering ? "fade-out" : "fade-in"
-          }`} // Apply fade-in or fade-out depending on hover state
-        >
+        <div key={i} className={i % 20 === 0 ? 'text-amber-300' : ''}>
           {line}
         </div>
       ))}

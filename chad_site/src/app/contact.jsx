@@ -44,45 +44,89 @@ function Contact() {
   const getAsciiText = () => {
     switch (hoveredButton) {
       case 'GITHUB':
-        return [
-          '>_ Accessing GitHub...',
-          '>_ Fetching repositories...',
-          '>_ Connecting to GitHub API...',
-          '>_ GitHub login successful.',
-          '>_ You can now interact with code.',
-        ];
-      case 'EMAIL':
-        return [
-          '>_ Sending email...',
-          '>_ Connecting to mail server...',
-          '>_ Verifying email address...',
-          '>_ Email sent successfully.',
-          '>_ Please check your inbox.',
-        ];
-      case 'LINKEDIN':
-        return [
-          '>_ Opening LinkedIn...',
-          '>_ Connecting to LinkedIn API...',
-          '>_ Searching for connections...',
-          '>_ LinkedIn profile loaded.',
-          '>_ You have 5 new connection requests.',
-        ];
-      case 'RESUME':
-        return [
-          '>_ Preparing resume...',
-          '>_ Formatting document...',
-          '>_ Checking resume for errors...',
-          '>_ Resume ready for download.',
-          '>_ You can now apply for jobs.',
-        ];
-      default:
-        return [
-          '>_ RUNNING...',
-          '>_ Initializing...',
-          '>_ Loading data...',
-          '>_ Please wait...',
-          '>_ System operational.',
-        ];
+  return [
+    '>_ Accessing GitHub...',
+    '>_ Fetching repositories...',
+    '>_ Connecting to GitHub API...',
+    '>_ GitHub login successful.',
+    '>_ You can now interact with code.',
+    '>_ Loading repository details...',
+    '>_ Cloning repository...',
+    '>_ Fetching commit history...',
+    '>_ Creating a new branch...',
+    '>_ Pushing changes to remote...',
+    '>_ Synchronizing fork...',
+    '>_ Fetching pull requests...',
+    '>_ Updating repository settings...',
+  ];
+
+case 'EMAIL':
+  return [
+    '>_ Sending email...',
+    '>_ Connecting to mail server...',
+    '>_ Verifying email address...',
+    '>_ Email sent successfully.',
+    '>_ Please check your inbox.',
+    '>_ Attaching files...',
+    '>_ Composing message...',
+    '>_ Checking for email delivery status...',
+    '>_ Sending read receipt...',
+    '>_ Checking spam folder...',
+    '>_ Retrieving sent items...',
+    '>_ Synchronizing inbox...',
+    '>_ Encrypting message...',
+  ];
+
+case 'LINKEDIN':
+  return [
+    '>_ Opening LinkedIn...',
+    '>_ Connecting to LinkedIn API...',
+    '>_ Searching for connections...',
+    '>_ LinkedIn profile loaded.',
+    '>_ You have 5 new connection requests.',
+    '>_ Sending connection requests...',
+    '>_ Searching for job opportunities...',
+    '>_ Updating LinkedIn profile...',
+    '>_ Viewing connection\'s posts...',
+    '>_ Checking job recommendations...',
+    '>_ Endorsing skills...',
+    '>_ Viewing LinkedIn groups...',
+    '>_ Managing job alerts...',
+  ];
+
+case 'RESUME':
+  return [
+    '>_ Preparing resume...',
+    '>_ Formatting document...',
+    '>_ Checking resume for errors...',
+    '>_ Resume ready for download.',
+    '>_ You can now apply for jobs.',
+    '>_ Adding contact information...',
+    '>_ Updating work experience...',
+    '>_ Adding skills and certifications...',
+    '>_ Reviewing resume layout...',
+    '>_ Finalizing document...',
+    '>_ Proofreading resume...',
+    '>_ Converting to PDF...',
+    '>_ Saving final version...',
+  ];
+
+default:
+  return [
+    '>_ RUNNING...',
+    '>_ Initializing...',
+    '>_ Loading data...',
+    '>_ Please wait...',
+    '>_ System operational.',
+    '>_ Checking system health...',
+    '>_ Optimizing performance...',
+    '>_ Loading system configuration...',
+    '>_ Performing diagnostics...',
+    '>_ System ready for use...',
+    '>_ Analyzing data...',
+    '>_ Updating system components...',
+    '>_ Verifying data integrity...',
+  ];
     }
   };
 
@@ -103,8 +147,10 @@ function Contact() {
       </div>
 
       {/* Centered QuoteBox */}
-      <div className="absolute inset-0 flex justify-center items-center z-10 pointer-events-none">
+      <div className="absolute  inset-0 flex justify-center items-center z-10 pointer-events-none">
+        <div className='w-fit'>
         <QuoteBox quotePack={contactQuotes} transitionTime={15000} />
+        </div>
       </div>
 
       {/* Main Layout */}
@@ -112,7 +158,7 @@ function Contact() {
         {/* Left Column */}
         <div className="mt-20">
           <div className="flex flex-col items-start">
-            <h1 className="text-9xl text-left">
+            <h1 className="text-9xl text-left header">
               Get In <br />
               <div className="text-amber-300 by7">Touch</div>
             </h1>
