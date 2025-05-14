@@ -271,3 +271,7 @@ body {
     border-top: none;
   }
 }
+
+.card-border {
+  border-right: 0.5px solid rgba(225, 225, 225, 0.1);
+}
