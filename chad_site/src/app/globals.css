@@ -67,6 +67,30 @@
   color: #ffffff;
   opacity: 0.8;
 }
+
+@media (max-height: 700px) {
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+ 
+  }
+
+  .contact-buttons {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+
+    
+  }
+}
+
+
+
 .btn {
   width: 150px;
   height: 50px;

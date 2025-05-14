@@ -9,25 +9,38 @@ import AsciiDrift from './AsciiDrift.jsx';  // Import the new component
 
 function Contact() {
   const menuItems = [
-    { text: 'GITHUB', icon: <FaGithub /> },
-    { text: 'EMAIL', icon: <FaEnvelope /> },
-    { text: 'LINKEDIN', icon: <FaLinkedin /> },
-    { text: 'RESUME', icon: <FaPaperclip /> },
+    { text: 'GITHUB', icon: <FaGithub />, link: 'https://github.com/Chad1704' },
+    { text: 'EMAIL', icon: <FaEnvelope />, link: '#test' },
+    { text: 'LINKEDIN', icon: <FaLinkedin />, link: 'https://www.linkedin.com/in/chadkatz/' },
+    { text: 'RESUME', icon: <FaPaperclip />, link: '#test' },
   ];
 
   const [triggers, setTriggers] = useState({});
   const [hoveredButton, setHoveredButton] = useState(''); // Track hovered button
 
-  const contactQuotes = [
-    `"The most important thing in communication is hearing what isn't said." – Peter Drucker`,
-    `"Communication – the human connection – is the key to personal and career success." – Paul J. Meyer`,
-    `"To effectively communicate, we must realize that we are all different in the way we perceive the world." – Tony Robbins`,
-    `"The art of communication is the language of leadership." – James Humes`,
-    `"You can make more friends in two months by becoming interested in other people than in two years by trying to get other people interested in you." – Dale Carnegie`,
-    `"Connection is why we're here; it gives purpose and meaning to our lives." – Brené Brown`,
-    `"Communication leads to community, that is, to understanding, intimacy, and mutual valuing." – Rollo May`,
-    `"Your vibe attracts your tribe. Be authentic, and the right people will find you." – Unknown`,
-  ];
+ const contactQuotes = [
+  `"The most important thing in communication is hearing what isn't said." – Peter Drucker`,
+  `"Communication – the human connection – is the key to personal and career success." – Paul J. Meyer`,
+  `"To effectively communicate, we must realize that we are all different in the way we perceive the world." – Tony Robbins`,
+  `"The art of communication is the language of leadership." – James Humes`,
+  `"You can make more friends in two months by becoming interested in other people than in two years by trying to get other people interested in you." – Dale Carnegie`,
+  `"Connection is why we're here; it gives purpose and meaning to our lives." – Brené Brown`,
+  `"Communication leads to community, that is, to understanding, intimacy, and mutual valuing." – Rollo May`,
+  `"Words are, of course, the most powerful drug used by mankind." – Rudyard Kipling`,
+  `"The way we communicate with others and with ourselves ultimately determines the quality of our lives." – Tony Robbins`,
+  `"Good communication is just as stimulating as black coffee, and just as hard to sleep after." – Anne Morrow Lindbergh`,
+  `"We are stronger when we listen, and smarter when we share." – Rania Al-Abdullah`,
+  `"Assumptions are the termites of relationships." – Henry Winkler`,
+  `"Speak clearly, if you speak at all; carve every word before you let it fall." – Oliver Wendell Holmes Sr.`,
+  `"Listening is being able to be changed by the other person." – Alan Alda`,
+  `"The single biggest problem in communication is the illusion that it has taken place." – George Bernard Shaw`,
+  `"Empathy is the starting point for creating a community and taking action. It's the impetus for creating change." – Max Carver`,
+  `"When people talk, listen completely. Most people never listen." – Ernest Hemingway`,
+  `"Communication is your ticket to success, if you pay attention and learn to do it effectively." – Theo Gold`,
+  `"The most basic of all human needs is the need to understand and be understood." – Ralph G. Nichols`,
+  `"Real connection happens when we feel seen, heard, and valued." – Unknown`
+];
+
 
   // Handle hover enter and leave for menu items
   const handleMouseEnter = (index, text) => {
@@ -147,42 +160,51 @@ default:
       </div>
 
       {/* Centered QuoteBox */}
-      <div className="absolute  inset-0 flex justify-center items-center z-10 pointer-events-none">
+      <div className="absolute inset-0 flex justify-center items-center z-10   pointer-events-none">
         <div className='w-fit'>
         <QuoteBox quotePack={contactQuotes} transitionTime={15000} />
         </div>
       </div>
 
       {/* Main Layout */}
-      <div className="flex h-full w-full justify-between px-10">
+      <div className="flex flex-col sm:flex-row h-full w-full justify-between px-10">
+
         {/* Left Column */}
-        <div className="mt-20">
+        <div className="mt-5">
           <div className="flex flex-col items-start">
-            <h1 className="text-9xl text-left header">
+            <h1 className="text-9xl text-left header md:pt-3">
               Get In <br />
               <div className="text-amber-300 by7">Touch</div>
             </h1>
           </div>
 
-          <div className="flex flex-col gap-4 font-mono mt-8">
+       <div className="w-fit flex justify-center mt-8 ">
+  <div className=" md:pl-50 md:pt-7 flex flex-col gap-4 font-mono contact-buttons items-center">
+
+
             {menuItems.map((item, index) => (
               <a
                 key={item.text}
-                href={`#${item.text.toLowerCase()}`}
-                target="_self"
+                href={`${item.link.toLowerCase()}`}
+                target="_blank"
                 className="btn_2"
                 onMouseEnter={() => handleMouseEnter(index, item.text)}
                 onMouseLeave={() => handleMouseLeave(index)}
               >
                 <div className="relative flex w-full h-full items-center">
                   <span className="absolute z-9 pl-3.5">{item.icon}</span>
-                  <div className="w-full h-full justify-end by7b pr-5 flex items-center">
+                  <div className="w-full h-full justify-end by7 pr-5 flex items-center">
                     <TextEffect text={item.text} trigger={triggers[index]} />
                   </div>
                 </div>
               </a>
             ))}
           </div>
+          </div>
+
+
+
+
         </div>
 
         {/* Right ASCII Drift */}
