@@ -37,8 +37,8 @@ function AsciiBackground({
 
     const effect = new AsciiEffect(renderer, ' .,:;i1tfLCG08@', { invert: true });
     effect.setSize(window.innerWidth, window.innerHeight);
-    effect.domElement.style.color = 'white';
-    effect.domElement.style.backgroundColor = 'black';
+    effect.domElement.style.color = 'grey';
+    
     effect.domElement.style.position = 'absolute';
     effect.domElement.style.top = 0;
     effect.domElement.style.left = 0;

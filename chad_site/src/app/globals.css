@@ -29,6 +29,36 @@
 }
 
 
+
+
+
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  will-change: opacity; /* Optimize rendering for opacity change */
+}
+
+/* Fade in effect for text */
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  will-change: opacity; /* Optimize rendering for opacity change */
+}
+
+/* ASCII Drift text container */
+.animate-ascii-drift {
+  font-family: monospace;
+  opacity: 0.25;
+  max-height: 100%; /* Ensures the container takes the full height */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+
+
 .dot {
   font-family: 'dot', sans-serif;
 }
@@ -189,6 +219,18 @@
     --background: #000000;
     --foreground: #ededed;
   }
+}
+@keyframes ascii-drift {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-ascii-drift {
+  animation: ascii-drift 60s linear infinite;
 }
 
 body {
