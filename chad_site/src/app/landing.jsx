@@ -13,7 +13,7 @@ import ColorTester from "./colortester.js";
 function Landing() {
   return (
     <>
-      <div className=" overflow-hidden">
+      <div className=" overflow-hidden ">
         <div className="grid grid-cols-10 grid-rows-10 h-screen bg-dark ">
           {/* ColorTester visible only below lg */}
           <div className="relative hero-border flex col-span-9 lg:col-span-6 row-start-1 lg:row-start-1 row-span-5 lg:row-span-7 overflow-hidden">

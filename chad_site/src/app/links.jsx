@@ -7,13 +7,53 @@ import Hero from "./hero.jsx";
 
 function Links() {
   return (
-    <div className="w-full  h-full flex justify-center ">
+    <div className="w-full font-mono h-full flex justify-center">
       <div className="flex flex-col space-y-14 md:space-y-17 lg:ml-30 mt-20 text-light">
-        <div className="linkbar text-center">Linkedin</div>
-        <div className="linkbar text-center">Blog</div>
-        <div className="linkbar text-center">Github</div>
-        <div className="linkbar text-center">Email</div>
-        <div className="linkbar text-center">Resume</div>
+        <a
+          href="https://www.example.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="linkbar text-center opacity-70 hover:opacity-100">
+            Linkedin
+          </div>
+        </a>
+        <a
+          href="https://www.example.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="linkbar text-center opacity-70 hover:opacity-100">
+            Blog
+          </div>
+        </a>
+        <a
+          href="https://www.example.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="linkbar text-center opacity-70 hover:opacity-100">
+            Github
+          </div>
+        </a>
+        <a
+          href="mailto:someone@example.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="linkbar text-center opacity-70 hover:opacity-100">
+            Email
+          </div>
+        </a>
+        <a
+          href="https://www.example.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="linkbar text-center opacity-70 hover:opacity-100">
+            Resume
+          </div>
+        </a>
       </div>
     </div>
   );

@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import TextEffect from './textEffect.jsx';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import React, { useState } from "react";
+import TextEffect from "./textEffect.jsx";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function Header() {
-  const menuItems = ['PROJECTS', 'BLOG', 'CONTACT', 'ABOUT'];
+  const menuItems = ["PROJECTS", "BLOG", "CONTACT", "ABOUT"];
   const [triggers, setTriggers] = useState({});
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleMouseEnter = (index) => {
-    setTriggers((prev) => ({ ...prev, [index]: 'enter' }));
+    setTriggers((prev) => ({ ...prev, [index]: "enter" }));
   };
 
   const handleMouseLeave = (index) => {
-    setTriggers((prev) => ({ ...prev, [index]: 'leave' }));
+    setTriggers((prev) => ({ ...prev, [index]: "leave" }));
   };
 
   const toggleMenu = () => {
@@ -44,7 +44,10 @@ function Header() {
 
       {/* Mobile Hamburger Icon */}
       <div className="md:hidden">
-        <button onClick={toggleMenu} className="text-white text-2xl focus:outline-none">
+        <button
+          onClick={toggleMenu}
+          className="text-white text-2xl focus:outline-none"
+        >
           {mobileOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>

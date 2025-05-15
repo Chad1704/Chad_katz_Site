@@ -4,7 +4,7 @@ import React from "react";
 function Hero() {
   return (
     <>
-      <div className="grid grid-cols-12 grid-rows-12 h-full w-full">
+      <div className="grid grid-cols-12 grid-rows-12 h-full w-full  ">
         <div className="col-span-2 row-span-2 col-start-2 row-start-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ function Hero() {
 
         <div className="flex flex-col row-start-7 col-start-2 col-span-8 justify-center row-span-2">
           <div className="text-3xl text-left header text-light md:pt-3 align-middle by7">
-            <div className="text-light">Chad Katz</div>
+            <div className="text-light text-3xl">Chad Katz</div>
           </div>
         </div>
 

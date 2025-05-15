@@ -65,7 +65,10 @@ export default function ColorTester() {
   const displayBorder = isSwapped ? convertHexToRGB(theme.dark) : theme.border;
 
   return (
-    <div style={{ padding: 20 }}>
+    <div
+      className="transition duration-400 ease-in-out"
+      style={{ padding: 20 }}
+    >
       <div
         style={{
           marginBottom: 15,
@@ -81,8 +84,8 @@ export default function ColorTester() {
             onClick={() => setThemeIndex(i)}
             title={`Theme ${i + 1}`}
             style={{
-              width: 15,
-              height: 15,
+              width: 12,
+              height: 12,
               transform: "rotate(45deg)",
               borderRadius: 70,
               border:
