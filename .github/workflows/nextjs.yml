@@ -17,36 +17,36 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./chad_katz_site/chad_site  # Adjusted to your actual project root
-    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       
+      # 1. Install dependencies in Chad_katz_Site (where package.json lives)
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: 'npm'
-          cache-dependency-path: 'chad_katz_site/chad_site/package-lock.json'
+          cache-dependency-path: 'Chad_katz_Site/package-lock.json'  # Exact case
       
+      - name: Install dependencies
+        run: npm ci
+        working-directory: ./Chad_katz_Site  # Exact case
+      
+      # 2. Build from chad_site subfolder
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           static_site_generator: next
       
-      - name: Install dependencies
-        run: npm ci
-      
       - name: Build with Next.js
         run: npm run build
+        working-directory: ./Chad_katz_Site/chad_site  # Mixed case
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./chad_katz_site/chad_site/out  # Adjusted output path
+          path: ./Chad_katz_Site/chad_site/out  # Mixed case
 
   deploy:
     environment:
