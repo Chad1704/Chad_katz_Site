@@ -1,4 +1,5 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+export default {
+  output: 'export',
+  basePath: '/CHAD1704.GITHUB.IO',
+  assetPrefix: '/CHAD1704.GITHUB.IO',
+};
