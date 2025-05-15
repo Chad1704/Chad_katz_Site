@@ -7,14 +7,14 @@ import Hero from "./hero.jsx";
 import About from "./about.jsx";
 import Links from "./links.jsx";
 import Link from "next/link";
-import Projects from "./projects.jsx";
+import ProjectsHub from "./projectsHub.jsx"
 import ColorTester from "./colortester.js";
 
 function Landing() {
   return (
     <>
       <div className=" overflow-hidden ">
-        <div className="grid grid-cols-10 grid-rows-10 h-screen bg-dark ">
+        <div className="grid grid-cols-10 grid-rows-10 h-screen bg-dark transition duration-400 ease-in-out ">
           {/* ColorTester visible only below lg */}
           <div className="relative hero-border  flex col-span-9 lg:col-span-6 row-start-1 lg:row-start-1 row-span-5 lg:row-span-7  overflow-hidden">
             <div className="absolute top-0 right-0 lg:hidden p-2 z-10">
@@ -43,8 +43,8 @@ function Landing() {
           </div>
 
           {/* Projects */}
-          <div className="overflow-hidden pro-border flex items-center justify-center col-span-9 lg:col-span-8 row-span-2 lg:row-span-4">
-            <Projects />
+          <div className="overflow-hidden pro-border flex items-center justify-center col-span-9 lg:col-span-8 row-span-3 lg:row-span-4">
+            <ProjectsHub /> 
           </div>
         </div>
       </div>

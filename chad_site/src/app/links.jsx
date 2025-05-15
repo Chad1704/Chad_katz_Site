@@ -8,7 +8,7 @@ import Hero from "./hero.jsx";
 function Links() {
   return (
     <div className="w-full font-mono h-full flex justify-center">
-      <div className="flex flex-col space-y-14 md:space-y-17 lg:ml-30 mt-20 text-light">
+      <div className="flex flex-col space-y-14 md:space-y-17 lg:ml-30 mt-20 text-light duration-400 ease-in-out transition">
         <a
           href="https://www.example.com"
           target="_blank"
