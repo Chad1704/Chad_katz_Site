@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./Chad_katz_Site  # All commands will run here
+        working-directory: ./chad_katz_site/chad_site  # Adjusted to your actual project root
     
     steps:
       - name: Checkout
@@ -29,20 +29,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'npm'  # Explicitly use npm
+          cache: 'npm'
+          cache-dependency-path: 'chad_katz_site/chad_site/package-lock.json'
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           static_site_generator: next
-      
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            Chad_katz_Site/.next/cache
-            Chad_katz_Site/node_modules
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('Chad_katz_Site/package-lock.json') }}-${{ hashFiles('Chad_katz_Site/**.[jt]s', 'Chad_katz_Site/**.[jt]sx') }}
       
       - name: Install dependencies
         run: npm ci
@@ -50,13 +43,10 @@ jobs:
       - name: Build with Next.js
         run: npm run build
       
-      - name: Export static site (if using static export)
-        run: npm run export
-      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./Chad_katz_Site/out  # Or ./.next/static if not exporting
+          path: ./chad_katz_site/chad_site/out  # Adjusted output path
 
   deploy:
     environment:
