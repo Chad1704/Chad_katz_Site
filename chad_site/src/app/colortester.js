@@ -11,13 +11,11 @@ const colorThemes = [
     dark: "#00203FFF",
     border: "173, 239, 209",
   },
-
   {
     light: "#FFE6F0",
     dark: "#5C1A72",
     border: "255, 230, 240",
   },
-
   {
     light: "#78BC61",
     dark: "#131200",
@@ -33,6 +31,12 @@ const colorThemes = [
 export default function ColorTester() {
   const [themeIndex, setThemeIndex] = useState(0);
   const [isSwapped, setIsSwapped] = useState(false);
+
+  // Detect system theme and set initial color scheme
+  useEffect(() => {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setThemeIndex(prefersDark ? 1 : 0);
+  }, []);
 
   useEffect(() => {
     const theme = colorThemes[themeIndex];
@@ -65,10 +69,7 @@ export default function ColorTester() {
   const displayBorder = isSwapped ? convertHexToRGB(theme.dark) : theme.border;
 
   return (
-    <div
-      className="transition duration-400 ease-in-out"
-      style={{ padding: 20 }}
-    >
+    <div className="transition duration-400 ease-in-out" style={{ padding: 20 }}>
       <div
         style={{
           marginBottom: 15,
@@ -98,15 +99,6 @@ export default function ColorTester() {
           />
         ))}
       </div>
-
-      <div
-        style={{
-          marginTop: "15px",
-          display: "flex",
-          justifyContent: "center",
-          gap: "12px",
-        }}
-      ></div>
     </div>
   );
 }

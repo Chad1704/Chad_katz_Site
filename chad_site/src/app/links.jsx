@@ -8,7 +8,7 @@ function Links() {
     <div className="w-full font-mono h-full flex justify-center">
       <div className="flex flex-col space-y-14 md:space-y-17 lg:ml-30 mt-20 text-light duration-400 ease-in-out transition">
         <a
-          href="https://www.example.com"
+          href="https://www.linkedin.com/in/chadkatz/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -17,7 +17,7 @@ function Links() {
           </div>
         </a>
         <a
-          href="https://www.example.com"
+          href="https://github.com/Chad1704"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -26,7 +26,7 @@ function Links() {
           </div>
         </a>
         <a
-          href="https://www.example.com"
+          href="https://github.com/Chad1704"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -35,7 +35,7 @@ function Links() {
           </div>
         </a>
         <a
-          href="mailto:someone@example.com"
+          href="mailto:chadjoshkatz@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -44,7 +44,7 @@ function Links() {
           </div>
         </a>
         <a
-          href="https://www.example.com"
+          href="/404"
           target="_blank"
           rel="noopener noreferrer"
         >
