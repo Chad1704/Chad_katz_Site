@@ -3,7 +3,10 @@
 @theme {
   --color-light: #2bae66ff;
   --color-dark: #fcf6f5ff;
+  --breakpoint-xs: 30rem;
 }
+
+
 
 :root {
   --color-border: 173, 239, 209;

@@ -4,8 +4,8 @@ import React from "react";
 function Hero() {
   return (
     <>
-      <div className="grid grid-cols-12 grid-rows-12 h-full w-full  ">
-        <div className="col-span-2 row-span-2 col-start-2 row-start-2">
+      <div className=" grid grid-cols-12 grid-rows-12 h-full w-full   ">
+        <div className="col-span-2  row-span-2 col-start-2 row-start-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 2000 2000"
@@ -20,13 +20,13 @@ function Hero() {
           </svg>
         </div>
 
-        <div className="flex flex-col row-start-7 col-start-2 col-span-8 justify-center row-span-2">
-          <div className="text-3xl text-left header text-light md:pt-3 align-middle by7">
+        <div className="flex flex-col  row-start-5  lg:row-start-7 col-start-2 col-span-8 justify-center row-span-2">
+          <div className="text-3xl text-left header text-light lg:pt-3 align-middle by7">
             <div className="text-light text-3xl">Chad Katz</div>
           </div>
         </div>
 
-        <div className="flex flex-col row-start-9 justify-center text-light col-start-2 col-span-12 row-span-4">
+        <div className="flex flex-col row-start-8 lg:row-start-9 justify-center sm:row-start-8 text-light col-start-2 col-span-12 row-span-4">
           <div className="text-4xl by7 align-middle">
             Web Developer | Digital Creator | Problem Solver
           </div>
