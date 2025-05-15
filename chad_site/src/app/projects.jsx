@@ -12,11 +12,11 @@ function WithStyles({ title, tags, image, link, desc }) {
   return (
     <>
       <a href={link} target="_blank" rel="noopener noreferrer">
-        <div className="w-full h-64 card-border flex hover:bg-white transition duration-400 ease-in-out hover:text-black ">
+        <div className="w-full h-64 card-border text-light flex hover:bg-light transition duration-400 ease-in-out hover:text-dark ">
           {/* Example usage of props — update or style as needed */}
           <div className=" ml-15 mt-15">
-            <h2 className="text-3xl ">{title}</h2>
-            <div className="mt-3 flex flex-col gap-1 ">
+            <h2 className="text-3xl  ">{title}</h2>
+            <div className="mt-3 flex flex-col gap-1 opacity-70 ">
               {tags?.map((tag, idx) => (
                 <span key={idx} className="text-md">
                   {tag}
@@ -27,14 +27,6 @@ function WithStyles({ title, tags, image, link, desc }) {
             {/* Example tags display */}
 
             {/* Optional link */}
-            {link && (
-              <a
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 inline-block text-blue-600 underline text-sm"
-              ></a>
-            )}
           </div>
         </div>
       </a>

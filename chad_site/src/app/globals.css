@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@theme {
+  --color-light: #2bae66ff;
+  --color-dark: #00203fff;
+}
+
+:root {
+  --color-border: 173, 239, 209;
+}
+
 @font-face {
   font-family: "dot";
   src: url("/fonts/DOTFONTS.TTF") format("truetype");
@@ -237,12 +246,12 @@ body {
   border-bottom: none;
   border-top: none;
   border-left: none;
-  border-right: 0.5px solid rgba(225, 225, 225, 0.1);
+  border-right: 0.5px solid rgba(var(--color-border), 0.5);
 }
 
 @media (min-width: 1024px) {
   .hero-border {
-    border-bottom: 0.5px solid rgba(225, 225, 225, 0.1);
+    border-bottom: 0.5px solid rgba(var(--color-border), 0.5);
   }
 }
 
@@ -255,15 +264,15 @@ body {
 
 @media (min-width: 1024px) {
   .about-border {
-    border-bottom: 0.5px solid rgba(225, 225, 225, 0.1);
+    border-bottom: 0.5px solid rgba(var(--color-border), 0.5);
   }
 }
 
 .pro-border {
   border-bottom: none;
-  border-top: 0.5px solid rgba(225, 225, 225, 0.1);
+  border-top: 0.5px solid rgba(var(--color-border), 0.5);
   border-left: none;
-  border-right: 0.5px solid rgba(225, 225, 225, 0.1);
+  border-right: none;
 }
 
 @media (min-width: 1024px) {
@@ -273,5 +282,5 @@ body {
 }
 
 .card-border {
-  border-right: 0.5px solid rgba(225, 225, 225, 0.1);
+  border-right: 0.5px solid rgba(var(--color-border), 0.5);
 }
