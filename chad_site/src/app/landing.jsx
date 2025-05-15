@@ -1,12 +1,11 @@
 "use client";
 
 import React from "react";
-import AsciiBackground from "./AsciiBackground";
-import WireframeBackground from "./WireframeBackground";
+
 import Hero from "./hero.jsx";
 import About from "./about.jsx";
 import Links from "./links.jsx";
-import Link from "next/link";
+
 import ProjectsHub from "./projectsHub.jsx"
 import ColorTester from "./colortester.js";
 

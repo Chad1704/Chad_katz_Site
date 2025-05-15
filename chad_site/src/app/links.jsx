@@ -1,9 +1,7 @@
 "use client";
 
 import React from "react";
-import AsciiBackground from "./AsciiBackground";
-import WireframeBackground from "./WireframeBackground";
-import Hero from "./hero.jsx";
+
 
 function Links() {
   return (
